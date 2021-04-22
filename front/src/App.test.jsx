@@ -64,7 +64,7 @@ describe('App', () => {
     it('renders the PostDetail page', () => {
       renderApp({ path: '/post/5' });
 
-      expect(screen.getByText('loading..')).toBeInTheDocument();
+      expect(screen.getByText('loading...')).toBeInTheDocument();
     });
   });
 
