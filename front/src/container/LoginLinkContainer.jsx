@@ -1,16 +1,23 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import LoginLink from '../components/LoginLink';
 import ProfileButton from '../components/ProfileButton';
+import { loadNonMember, logout } from '../data/userReducer';
 
 export default function LoginLinkContainer() {
+  const dispatch = useDispatch();
   const { accessToken, user } = useSelector((state) => state.user);
 
   if (!accessToken) {
     return <LoginLink />;
   }
 
-  return <ProfileButton user={user} />;
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(loadNonMember());
+  };
+
+  return <ProfileButton user={user} handleLogout={handleLogout} />;
 }

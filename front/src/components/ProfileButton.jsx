@@ -3,8 +3,25 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { DownOutlined } from '@ant-design/icons';
+import UserActionList from './UserActionList';
 
-const ProfileWrapper = styled.div({
+const DropDownBox = styled.div({
+
+  position: 'relative',
+
+  '& > ul': {
+    display: 'none',
+  },
+
+  '&:hover': {
+    ul: {
+      display: 'block',
+    },
+  },
+
+});
+
+const ProfileButtonWrapper = styled.div({
 
   display: 'flex',
 
@@ -49,20 +66,23 @@ const IconWrapper = styled.div({
   alignItems: 'center',
 });
 
-export default function ProfileButton({ user }) {
+export default function ProfileButton({ user, handleLogout }) {
   if (!user) return <></>;
 
   const { profileUrl, name } = user;
 
   return (
-    <ProfileWrapper>
-      <ProfileImage src={profileUrl} alt="user-profile" />
-      <UserNameWrapper>
-        {name}
-      </UserNameWrapper>
-      <IconWrapper>
-        <DownOutlined />
-      </IconWrapper>
-    </ProfileWrapper>
+    <DropDownBox role="menu">
+      <ProfileButtonWrapper>
+        <ProfileImage src={profileUrl} alt="user-profile" />
+        <UserNameWrapper>
+          {name}
+        </UserNameWrapper>
+        <IconWrapper>
+          <DownOutlined />
+        </IconWrapper>
+      </ProfileButtonWrapper>
+      <UserActionList handleLogout={handleLogout} />
+    </DropDownBox>
   );
 }

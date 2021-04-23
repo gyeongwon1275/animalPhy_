@@ -13,6 +13,7 @@ import userReducer,
   loadUser,
   loadNonMember,
   setNonMember,
+  logout,
 } from '../userReducer';
 
 import {
@@ -61,6 +62,17 @@ describe('userReducer', () => {
       const state = userReducer(initialState, setUser({}));
 
       expect(state.user).toEqual({});
+    });
+  });
+
+  describe('logout', () => {
+    it('resets user, accessToken', () => {
+      const initialState = { user: mockUser, accessToken: '1234' };
+
+      const state = userReducer(initialState, logout());
+
+      expect(state.user).toBeNull();
+      expect(state.accessToken).toBe('');
     });
   });
 
