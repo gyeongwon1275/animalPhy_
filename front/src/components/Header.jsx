@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 import { setFormVisible } from '../data/postReducer';
 
 import PostFormContainer from '../container/PostFormContainer';
-import LoginButtonContainer from '../container/LoginButtonContainer';
+import LoginLinkContainer from '../container/LoginLinkContainer';
 import Logo from './Logo';
 
 const DesktopUploadButton = styled.button({
@@ -115,7 +115,7 @@ export default function Header() {
           <PlusOutlined />
         </MobileUploadButton>
       </UploadButtonWrapper>
-      <LoginButtonContainer />
+      <LoginLinkContainer />
       <PostFormContainer />
     </HeaderWrapper>
   );
