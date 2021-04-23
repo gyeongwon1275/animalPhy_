@@ -9,10 +9,14 @@ const PawIcon = styled(Paw)({
   height: 'auto',
 });
 
-const LogoBox = styled.div({
+const Link = styled.a({
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',
+
+  '&:hover': {
+    color: 'inherit',
+  },
 });
 
 const LogoTitle = styled.span({
@@ -24,9 +28,9 @@ const LogoTitle = styled.span({
 
 export default function Logo() {
   return (
-    <LogoBox>
+    <Link href="/">
       <PawIcon />
       <LogoTitle>AnimalPhy</LogoTitle>
-    </LogoBox>
+    </Link>
   );
 }

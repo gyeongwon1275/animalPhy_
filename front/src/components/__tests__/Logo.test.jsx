@@ -8,6 +8,9 @@ describe('Logo', () => {
   it('renders LOGO', () => {
     render(<Logo />);
 
-    expect(screen.getByText('AnimalPhy')).toBeInTheDocument();
+    const link = screen.getByRole('link');
+
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', '/');
   });
 });
