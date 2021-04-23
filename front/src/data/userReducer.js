@@ -31,6 +31,10 @@ const { actions, reducer } = createSlice({
     setNonMember(state, { payload: nonMember }) {
       state.nonMember = nonMember;
     },
+    logout(state) {
+      state.accessToken = '';
+      state.user = null;
+    },
     setError(state, { payload: error }) {
       state.error = error;
     },
@@ -42,6 +46,7 @@ export const {
   setSignUpSucceded,
   setAccessToken,
   setUser,
+  logout,
   setNonMember,
 } = actions;
 
