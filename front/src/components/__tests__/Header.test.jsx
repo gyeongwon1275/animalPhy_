@@ -29,9 +29,9 @@ describe('Header', () => {
     expect(screen.getByRole('img', { name: 'plus' })).toBeInTheDocument();
   });
 
-  it('renders Login Button', () => {
+  it('renders Login Link', () => {
     render(<Header />);
 
-    expect(screen.getByRole('button', { name: 'Login' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'login-link' })).toBeInTheDocument();
   });
 });
