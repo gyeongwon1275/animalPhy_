@@ -8,42 +8,41 @@ const ProfileWrapper = styled.div({
 
   display: 'flex',
 
-  width: '160px',
-  height: '36px',
+  width: '170px',
+  height: '40px',
 
   fontWeight: 'bold',
 
-  backgroundColor: '#3e3e3e',
+  backgroundColor: 'rgb(65, 65, 65)',
 
   cursor: 'pointer',
 
 });
 
-const ProfileImageWrapper = styled.img({
+const ProfileImage = styled.img({
 
-  objectFit: 'cover',
-  width: '25%',
-  height: '100%',
+  width: '40px',
+  height: '40px',
 
-  backgroundColor: '#white',
+  backgroundColor: 'rgb(100, 100, 100)',
 
 });
 
 const UserNameWrapper = styled.div({
 
   display: 'flex',
+  justifyContent: 'center',
   alignItems: 'center',
+  flex: 1,
 
   padding: '0 0.5rem',
 
-  width: '50%',
-  height: '100%',
-
-  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 const IconWrapper = styled.div({
-  width: '25%',
+  width: '40px',
+  height: '40px',
 
   display: 'flex',
   justifyContent: 'center',
@@ -51,23 +50,19 @@ const IconWrapper = styled.div({
 });
 
 export default function ProfileButton({ user }) {
-  if (user) {
-    const { profileUrl, name } = user;
-    return (
-      <ProfileWrapper>
+  if (!user) return <></>;
 
-        <ProfileImageWrapper src={profileUrl} alt="user-profile" />
+  const { profileUrl, name } = user;
 
-        <UserNameWrapper>
-          {name}
-        </UserNameWrapper>
-        <IconWrapper>
-          <DownOutlined />
-        </IconWrapper>
-      </ProfileWrapper>
-    );
-  }
   return (
-    <></>
+    <ProfileWrapper>
+      <ProfileImage src={profileUrl} alt="user-profile" />
+      <UserNameWrapper>
+        {name}
+      </UserNameWrapper>
+      <IconWrapper>
+        <DownOutlined />
+      </IconWrapper>
+    </ProfileWrapper>
   );
 }
