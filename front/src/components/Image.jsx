@@ -9,6 +9,7 @@ const PostImage = styled.img({
   margin: '10px 0',
 
   cursor: 'pointer',
+  objectFit: 'cover',
 
   '@media (min-width: 768px)': {
     width: '13.5vw',
