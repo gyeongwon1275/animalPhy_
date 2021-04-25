@@ -6,19 +6,23 @@ import styled from '@emotion/styled';
 
 const Link = styled.a({
 
-  fontSize: '1rem',
+  display: 'none',
 
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
+  '@media (min-width: 768px)': {
+    fontSize: '1rem',
 
-  height: '40px',
-  width: '170px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
 
-  '&:hover': {
-    color: 'white',
+    height: '40px',
+    width: '170px',
+
+    '&:hover': {
+      color: 'white',
+    },
+
   },
-
 });
 
 const UserIconWrapper = styled.div({
@@ -51,9 +55,9 @@ const TextWrapper = styled.div({
 
 export default function LoginLink() {
   return (
-    <Link href="/login" aria-label="login-link">
+    <Link href="/login" data-testid="login-link">
       <UserIconWrapper>
-        <UserOutlined />
+        <UserOutlined data-testid="user-icon" />
       </UserIconWrapper>
       <TextWrapper>
         Login

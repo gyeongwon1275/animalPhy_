@@ -36,7 +36,7 @@ describe('LoginLinkContainer', () => {
 
       render((<LoginLinkContainer />));
 
-      const loginLink = screen.getByRole('link', { name: 'login-link' });
+      const loginLink = screen.getByTestId('login-link');
       expect(loginLink).toHaveAttribute('href', '/login');
     });
   });

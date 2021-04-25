@@ -8,7 +8,7 @@ describe('LoginLink', () => {
   it('renders LoginLink', () => {
     render(<LoginLink />);
 
-    expect(screen.getByRole('img', { name: 'user' })).toBeInTheDocument();
-    expect(screen.getByText('Login')).toBeInTheDocument();
+    expect(screen.getByTestId('user-icon')).toBeInTheDocument();
+    expect(screen.getByTestId('login-link')).toBeInTheDocument();
   });
 });
