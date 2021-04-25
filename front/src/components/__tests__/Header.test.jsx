@@ -32,6 +32,6 @@ describe('Header', () => {
   it('renders Login Link', () => {
     render(<Header />);
 
-    expect(screen.getByRole('link', { name: 'login-link' })).toBeInTheDocument();
+    expect(screen.getByTestId('login-link')).toBeInTheDocument();
   });
 });

@@ -29,7 +29,7 @@ describe('DefaultLayout', () => {
     expect(screen.getByText('AnimalPhy')).toBeInTheDocument();
     expect(screen.getByRole('img', { name: 'upload' })).toBeInTheDocument();
     expect(screen.getByRole('img', { name: 'plus' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'login-link' })).toBeInTheDocument();
+    expect(screen.getByTestId('login-link')).toBeInTheDocument();
   });
 
   it('renders component received as prop', () => {
