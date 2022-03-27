@@ -1,9 +1,6 @@
 # AnimalPhy
-## 🚧 진행중 ~
 
-### 동물사진 공유 SNS 
-
-배포 http://animalphy-gyeongwon.s3-website.ap-northeast-2.amazonaws.com
+## 동물사진 공유 SNS 
 
 ### 주요기능 
 
